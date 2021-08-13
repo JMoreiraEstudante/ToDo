@@ -18,6 +18,7 @@ const AddTodo = ({ onAdd }) => {
     }
 
     return (
+        <div className="centered">
         <form className='add-form' onSubmit={onSubmit}>
             <div className='form-control'>
                 <label >Todo</label>
@@ -27,12 +28,9 @@ const AddTodo = ({ onAdd }) => {
                 <label >Description</label>
                 <textarea placeholder="Add Description" value={description} onChange={(e) => setDescription(e.target.value)} />
             </div>
-            <div className='form-control form-control-check'>
-                <label >Done?</label>
-                <input type="checkbox" checked={done} value={done} onChange={(e) => setDone(e.currentTarget.checked)} />
-            </div>
-            <input type="submit" value="Add" className="btn btn-block" />
+            <input type="submit" value="ADD"/>
         </form>
+        </div>
     )
 }
 

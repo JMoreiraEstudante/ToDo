@@ -1,10 +1,10 @@
 import Todo from "./Todo"
 
-const Todos = ({todos}) => {
+const Todos = ({todos, onDelete, onDone}) => {
     return (
-        <div>
+        <div className="todos">
             {todos.map((todo) => (
-              <Todo key={todo._id} todo={todo}/>  
+              <Todo key={todo._id} todo={todo} onDelete={onDelete} onDone={onDone} />  
             ))}
         </div>
     )
