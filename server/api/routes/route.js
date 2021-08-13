@@ -15,6 +15,7 @@ module.exports = function (app) {
     // put and delete request for /todos endpoints
     app
         .route("/todo/:id")
+        .get(todoList.listTodo)
         .put(todoList.updateTodo)
         .delete(todoList.deleteTodo);
 };

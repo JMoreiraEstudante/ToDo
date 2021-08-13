@@ -24,7 +24,17 @@ exports.createNewTodo = (req, res) => {
     });
 };
 
-// updateTodo function - To update todo status by id
+//listTodo function - To get todo by id
+exports.listTodo = (req, res) => {
+    Todo.findOne({_id: req.params.id}, (err, todo) => {
+        if (err) {
+            res.status(500).send(err);
+        }
+        res.status(200).json(todo);
+    });
+};
+
+// updateTodo function - To update todo by id
 exports.updateTodo = (req, res) => {
     Todo.findOneAndUpdate({ _id: req.params.id }, req.body, { new: true }, (err, todo) => {
         if (err) {

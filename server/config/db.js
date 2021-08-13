@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 mongoose.set('useFindAndModify', false);
 
 //Assign MongoDB connection string to Uri and declare options settings
-var uri = "mongodb+srv://admin:1234@clusterestudos.neryf.mongodb.net/Estudos?retryWrites=true&w=majority"
+var uri = "mongodb+srv://"+process.env.DB_USER+":"+process.env.DB_PASSWORD+"@clusterestudos.neryf.mongodb.net/Estudos?retryWrites=true&w=majority"
 
 // Declare a variable named option and assign optional settings
 const options = {

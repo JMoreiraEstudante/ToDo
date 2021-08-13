@@ -1,5 +1,5 @@
 'use strict'
-
+require('dotenv').config()
 // Import DB Connection
 require("./config/db");
 
@@ -10,7 +10,7 @@ const express = require("express");
 const app = express();
 
 // define port to run express app
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 3001;
 
 // use bodyParser middleware on express app
 app.use(express.urlencoded({ extended: true }));
